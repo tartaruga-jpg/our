@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12.07.26 — Our Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            velvet: '#0B0709',
+            burgundy: '#1A0B12',
+            crimson: '#9E1B32',
+            rosepink: '#F472B6',
+            softpink: '#FBCFE8',
+            champagne: '#E6C280',
+            ivory: '#FAF3F0',
+          },
+          fontFamily: {
+            serif: ['"Libre Caslon Text"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+            hand: ['"Caveat"', 'cursive'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B0709;
+      color: #FAF3F0;
+      background-image:
+        linear-gradient(115deg, rgba(255, 255, 255, 0.035), transparent 28%, rgba(244, 114, 182, 0.055) 52%, transparent 72%),
+        radial-gradient(circle at 15% 15%, rgba(158, 27, 50, 0.30), transparent 40%),
+        radial-gradient(circle at 85% 35%, rgba(244, 114, 182, 0.18), transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(158, 27, 50, 0.24), transparent 50%),
+        linear-gradient(145deg, #12070c 0%, #0B0709 46%, #160912 100%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        linear-gradient(105deg, transparent 18%, rgba(255, 255, 255, 0.025) 28%, transparent 38%),
+        linear-gradient(250deg, rgba(230, 194, 128, 0.028), transparent 32%);
+      opacity: 0.9;
+    }
+
+    .glass-fancy {
+      background: linear-gradient(145deg, rgba(26, 11, 18, 0.80), rgba(14, 8, 11, 0.92));
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(230, 194, 128, 0.24);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(251, 207, 232, 0.12);
+    }
+
+    .glass-fancy:hover {
+      border-color: rgba(244, 114, 182, 0.45);
+      box-shadow: 0 24px 60px rgba(158, 27, 50, 0.24), inset 0 1px 0 rgba(230, 194, 128, 0.25);
+    }
+
+    .glass-fancy,
+    .timeline-box,
+    .love-note-glass,
+    .story-bullet,
+    .romantic-frame,
+    .edge-glow {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .glass-fancy.rounded-3xl { border-radius: 30px 18px 30px 18px; }
+    .timeline-box.rounded-2xl { border-radius: 24px 14px 24px 14px; }
+    .love-note-glass.rounded-3xl { border-radius: 30px 16px 30px 16px; }
+    .romantic-frame.rounded-2xl { border-radius: 26px 12px 26px 12px; }
+
+    .glass-fancy::before,
+    .timeline-box::before,
+    .love-note-glass::before,
+    .story-bullet::before,
+    .romantic-frame::before,
+    .edge-glow::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      padding: 1.5px;
+      border-radius: inherit;
+      background: linear-gradient(130deg, #F472B6, #E6C280, #fff7d6, #9E1B32, #F472B6);
+      background-size: 250% 250%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      opacity: 0.72;
+      filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.48));
+      pointer-events: none;
+      z-index: 0;
+      animation: edgeSparkle 4s ease-in-out infinite, edgeColorDrift 8s linear infinite;
+    }
+
+    @keyframes edgeSparkle {
+      0%, 100% { opacity: 0.58; filter: drop-shadow(0 0 4px rgba(244, 114, 182, 0.38)); }
+      50% { opacity: 1; filter: drop-shadow(0 0 9px rgba(230, 194, 128, 0.76)); }
+    }
+
+    @keyframes edgeColorDrift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .glass-fancy::before,
+      .timeline-box::before,
+      .love-note-glass::before,
+      .story-bullet::before,
+      .romantic-frame::before,
+      .edge-glow::before,
+      #lock-card > button.edge-glow::before,
+      #cute-note-btn.edge-glow::before {
+        animation: none;
+      }
+    }
+
+    .pin-box:focus {
+      border-color: #F472B6;
+      box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.2);
+      outline: none;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+    .animate-shake {
+      animation: shake 0.4s ease-in-out;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .animate-float {
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    @keyframes popNote {
+      0% { opacity: 0; transform: scale(0.92) translateY(16px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .animate-pop {
+      animation: popNote 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .heart-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      animation: riseUp 2.4s ease-out forwards;
+    }
+    @keyframes riseUp {
+      0% { opacity: 1; transform: translateY(0) scale(0.8); }
+      100% { opacity: 0; transform: translateY(-160px) scale(1.4) rotate(18deg); }
+    }
+
+    /* Setiap section tampil sebagai satu halaman, konten baru muncul saat masuk viewport */
+    #main-content {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      gap: 0;
+    }
+
+    #main-content > .page-section {
+      position: relative;
+      min-height: 100svh;
+      height: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      padding: clamp(32px, 5vh, 64px) 0;
+      box-sizing: border-box;
+      opacity: 1;
+      transform: translateY(0);
+      filter: none;
+      transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.9s ease;
+    }
+
+    #main-content.reveal-ready > .page-section {
+      opacity: 0;
+      transform: translateY(34px);
+      filter: blur(6px);
+    }
+
+    #main-content.reveal-ready > .page-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .story-item {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: none;
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s ease;
+    }
+
+    #main-content.reveal-ready .story-item {
+      opacity: 0;
+      transform: translateY(24px) scale(0.985);
+      filter: blur(4px);
+    }
+
+    #main-content.reveal-ready .story-item.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+
+    #main-content > .page-section::before,
+    #main-content > .page-section::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 9999px;
+      pointer-events: none;
+    }
+
+    #main-content > .page-section::before {
+      width: 300px;
+      height: 300px;
+      left: -220px;
+      top: 14%;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.12), transparent 68%);
+      box-shadow: 0 0 45px rgba(244, 114, 182, 0.06);
+    }
+
+    #main-content > .page-section::after {
+      width: 260px;
+      height: 260px;
+      right: -190px;
+      bottom: 10%;
+      background: radial-gradient(circle, rgba(230, 194, 128, 0.10), transparent 68%);
+    }
+
+    .floral-ornament {
+      position: absolute;
+      z-index: -1;
+      pointer-events: none;
+      color: rgba(251, 207, 232, 0.16);
+      font-family: serif;
+      line-height: 1;
+      user-select: none;
+      filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.12));
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    .floral-ornament.left { left: -18px; top: 18%; font-size: 54px; transform: rotate(-12deg); }
+    .floral-ornament.right { right: -12px; bottom: 16%; font-size: 48px; transform: rotate(14deg); animation-delay: -2.5s; }
+
+    .story-timeline {
+      --timeline-progress: 0%;
+      --timeline-light-opacity: 0;
+    }
+
+    .story-timeline::after {
+      content: "";
+      position: absolute;
+      left: 26px;
+      top: calc(54px + var(--timeline-progress) - 18px);
+      width: 3px;
+      height: 36px;
+      border-radius: 9999px;
+      background: linear-gradient(to bottom, rgba(255, 247, 214, 0.38), rgba(244, 114, 182, 0.38) 55%, rgba(158, 27, 50, 0.38));
+      box-shadow: 0 0 8px #FBCFE8, 0 0 18px rgba(244, 114, 182, 0.9), 0 0 34px rgba(158, 27, 50, 0.62);
+      z-index: 1;
+      opacity: var(--timeline-light-opacity);
+      pointer-events: none;
+      transition: top 0.12s linear, opacity 0.12s linear;
+    }
+
+    .story-bullet {
+      z-index: 2;
+      box-shadow:
+        0 8px 24px rgba(158, 27, 50, 0.32),
+        0 0 18px rgba(244, 114, 182, 0.38),
+        0 0 36px rgba(158, 27, 50, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      animation: bulletGlow 3.2s ease-in-out infinite;
+    }
+
+    @keyframes bulletGlow {
+      0%, 100% { box-shadow: 0 8px 24px rgba(158, 27, 50, 0.28), 0 0 14px rgba(244, 114, 182, 0.28), inset 0 1px 0 rgba(255,255,255,0.14); }
+      50% { box-shadow: 0 10px 30px rgba(158, 27, 50, 0.42), 0 0 26px rgba(244, 114, 182, 0.72), 0 0 44px rgba(230,194,128,0.18), inset 0 1px 0 rgba(255,255,255,0.20); }
+    }
+
+    .story-item.is-visible .timeline-box {
+      border-color: rgba(244, 114, 182, 0.42);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.38), 0 0 24px rgba(244,114,182,0.10), inset 0 1px 0 rgba(251, 207, 232, 0.12);
+    }
+
+    .story-timeline {
+      position: relative;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .story-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr);
+      column-gap: 16px;
+      align-items: start;
+    }
+
+    .story-item:not(:last-child) {
+      padding-bottom: 22px;
+    }
+
+    .story-item:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 26px;
+      top: 54px;
+      bottom: -2px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(244, 114, 182, 0.85), rgba(230, 194, 128, 0.28));
+      box-shadow: 0 0 10px rgba(244, 114, 182, 0.18);
+    }
+
+    .story-bullet {
+      position: relative;
+      z-index: 2;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 9999px;
+      background: linear-gradient(145deg, rgba(158, 27, 50, 0.92), rgba(244, 114, 182, 0.28));
+      border: 1px solid rgba(251, 207, 232, 0.52);
+      box-shadow: 0 8px 24px rgba(158, 27, 50, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .timeline-box {
+      background: linear-gradient(145deg, rgba(26, 11, 18, 0.72), rgba(14, 8, 11, 0.58));
+      border: 1px solid rgba(230, 194, 128, 0.22);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(251, 207, 232, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .love-note-glass {
+      background: linear-gradient(145deg, rgba(26, 11, 18, 0.82), rgba(14, 8, 11, 0.68));
+      backdrop-filter: blur(22px) saturate(125%);
+      -webkit-backdrop-filter: blur(22px) saturate(125%);
+      border: 1px solid rgba(251, 207, 232, 0.32);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-section {
+      isolation: isolate;
+      gap: clamp(24px, 3vh, 36px);
+      padding-inline: 24px;
+    }
+
+    #main-content > #hero-section {
+      justify-content: flex-start;
+      padding-top: clamp(12px, 2vh, 20px);
+      overflow-x: clip;
+      overflow-y: visible;
+    }
+
+    .hero-serif {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .hero-title-line {
+      display: block;
+    }
+
+    #hero-title-line-1 {
+      white-space: nowrap;
+    }
+
+    .hero-title-accent {
+      margin-top: 0.02em;
+      margin-bottom: 0.12em;
+      font-size: 1.22em;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.22;
+      background: linear-gradient(105deg, #E6C280 8%, #FBCFE8 92%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-message-wrap {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 680px);
+      margin-inline: auto;
+      padding: clamp(16px, 3vw, 28px) 0;
+    }
+
+    .hero-message-wrap::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -14% -12%;
+      background: radial-gradient(ellipse at center, rgba(158, 27, 50, 0.25), rgba(244, 114, 182, 0.13) 38%, transparent 72%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+
+    .hero-hairline {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 176px);
+      height: 12px;
+      margin-inline: auto;
+      color: rgba(230, 194, 128, 0.9);
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .hero-hairline::before {
+      content: "";
+      position: absolute;
+      width: min(100%, 176px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #E6C280 50%, transparent);
+      opacity: 0.72;
+    }
+
+    .hero-hairline span {
+      position: relative;
+      padding-inline: 8px;
+      text-shadow: 0 0 10px rgba(230, 194, 128, 0.55);
+    }
+
+    .hero-signature {
+      color: rgba(230, 194, 128, 0.9);
+      font-family: "Caveat", cursive;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      line-height: 1;
+    }
+
+    .hero-scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 42px;
+      padding: 0.7rem 1.15rem;
+      border: 1px solid rgba(230, 194, 128, 0.24);
+      border-radius: 9999px;
+      background: rgba(26, 11, 18, 0.34);
+      color: rgba(250, 243, 240, 0.78);
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(251, 207, 232, 0.08);
+      transition: border-color 220ms ease, color 220ms ease, background-color 220ms ease;
+      animation: heroCueFloat 3.2s ease-in-out infinite;
+    }
+
+    .hero-scroll-cue:hover {
+      border-color: rgba(230, 194, 128, 0.5);
+      background: rgba(26, 11, 18, 0.58);
+      color: #E6C280;
+    }
+
+    .hero-reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(5px);
+    }
+
+    #hero-section.is-visible .hero-reveal {
+      animation: heroReveal 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    #hero-section.is-visible .hero-reveal-1 { animation-delay: 0ms; }
+    #hero-section.is-visible .hero-reveal-2 { animation-delay: 150ms; }
+    #hero-section.is-visible .hero-reveal-3 { animation-delay: 300ms; }
+    #hero-section.is-visible .hero-reveal-4 { animation-delay: 450ms; }
+    #hero-section.is-visible .hero-reveal-5 { animation-delay: 600ms; }
+    #hero-section.is-visible .hero-reveal-6 { animation-delay: 750ms; }
+    #hero-section.is-visible .hero-reveal-7 { animation-delay: 900ms; }
+
+    @keyframes heroReveal {
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    @keyframes heroCueFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #hero-section.is-visible .hero-reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+
+      .hero-scroll-cue {
+        animation: none;
+      }
+    }
+
+    .love-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(-8px);
+      animation: wordReveal 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      margin-right: 0.24em;
+    }
+
+    @keyframes wordReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #ambient-hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-heart {
+      position: absolute;
+      bottom: -30px;
+      color: rgba(244, 114, 182, 0.22);
+      text-shadow: 0 0 12px rgba(244, 114, 182, 0.18);
+      animation: ambientRise linear infinite;
+    }
+
+    @keyframes ambientRise {
+      0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+      12% { opacity: 1; color: rgba(244, 114, 182, 0.48); }
+      55% { color: rgba(230, 194, 128, 0.5); text-shadow: 0 0 14px rgba(230, 194, 128, 0.35); }
+      88% { opacity: 0.7; color: rgba(251, 207, 232, 0.42); }
+      100% { transform: translate3d(var(--drift), -110vh, 0) rotate(18deg); opacity: 0; }
+    }
+
+    #lock-screen,
+    #main-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 640px) {
+      .hero-section {
+        padding-inline: 8px;
+      }
+
+      .story-item {
+        grid-template-columns: 48px minmax(0, 1fr);
+        column-gap: 12px;
+      }
+
+      .story-bullet {
+        width: 48px;
+        height: 48px;
+      }
+
+      .story-item:not(:last-child)::before,
+      .story-timeline::after {
+        left: 23px;
+      }
+
+      #main-content > .page-section {
+        padding-block: 44px;
+      }
+
+      .floral-ornament.left { left: -8px; font-size: 42px; }
+      .floral-ornament.right { right: -6px; font-size: 40px; }
+    }
+
+    #every-side {
+      justify-content: center;
+      padding-inline: clamp(16px, 4vw, 48px);
+    }
+
+    #main-content > #every-side {
+      overflow: clip;
+    }
+
+    .journey-serif { font-family: "Cormorant Garamond", serif; }
+    .journey-sans { font-family: "Plus Jakarta Sans", sans-serif; }
+
+    .journey-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1040px;
+      margin-inline: auto;
+      display: grid;
+      gap: clamp(22px, 4vh, 36px);
+    }
+
+    .journey-stepper {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .journey-stepper::before {
+      content: "";
+      position: absolute;
+      left: 12.5%;
+      right: 12.5%;
+      top: 32px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(230, 194, 128, 0.28), rgba(244, 114, 182, 0.64), rgba(230, 194, 128, 0.28));
+      box-shadow: 0 0 12px rgba(244, 114, 182, 0.16);
+    }
+
+    .journey-tab {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 8px 12px;
+      border: 1px solid rgba(230, 194, 128, 0.16);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(251, 207, 232, 0.07), rgba(26, 11, 18, 0.38));
+      color: rgba(251, 207, 232, 0.76);
+      backdrop-filter: blur(14px) saturate(135%);
+      -webkit-backdrop-filter: blur(14px) saturate(135%);
+      box-shadow: inset 0 1px 0 rgba(251, 207, 232, 0.08), 0 8px 20px rgba(0, 0, 0, 0.16);
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .journey-tab:hover {
+      color: #FAF3F0;
+      transform: translateY(-2px);
+    }
+
+    .journey-tab:focus-visible,
+    .journey-nav:focus-visible {
+      outline: 2px solid rgba(244, 114, 182, 0.9);
+      outline-offset: 3px;
+    }
+
+    .journey-tab-marker {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(230, 194, 128, 0.4);
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(26, 11, 18, 0.98), rgba(11, 7, 9, 0.98));
+      color: rgba(230, 194, 128, 0.86);
+      font: 600 0.8rem "Plus Jakarta Sans", sans-serif;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    }
+
+    .journey-tab-indicator {
+      position: absolute;
+      top: 2px;
+      right: 1px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #0B0709;
+      border-radius: 50%;
+      background: #E6C280;
+      box-shadow: 0 0 10px rgba(244, 114, 182, 0.75);
+      opacity: 0;
+    }
+
+    .journey-tab-label {
+      max-width: 160px;
+      color: inherit;
+      font: 500 0.75rem/1.35 "Plus Jakarta Sans", sans-serif;
+      text-align: center;
+      transition: color 0.25s ease;
+    }
+
+    .journey-tab.is-active {
+      border-color: transparent;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 48%) padding-box,
+        linear-gradient(145deg, rgba(158, 27, 50, 0.2), rgba(244, 114, 182, 0.08)) padding-box,
+        linear-gradient(135deg, #F472B6, #9E1B32 58%, rgba(230, 194, 128, 0.82)) border-box;
+      color: #E6C280;
+      box-shadow: 0 0 24px rgba(158, 27, 50, 0.18), inset 0 1px 0 rgba(251, 207, 232, 0.16), inset 0 -16px 24px rgba(11, 7, 9, 0.16);
+    }
+
+    .journey-tab.is-active .journey-tab-marker {
+      border-color: rgba(244, 114, 182, 0.88);
+      background: linear-gradient(145deg, rgba(158, 27, 50, 0.96), rgba(244, 114, 182, 0.28));
+      color: #FAF3F0;
+      box-shadow: 0 0 18px rgba(244, 114, 182, 0.54), 0 0 34px rgba(158, 27, 50, 0.32);
+    }
+
+    .journey-tab.is-active .journey-tab-indicator {
+      opacity: 1;
+      animation: journeyPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes journeyPulse {
+      0%, 100% { transform: scale(0.85); box-shadow: 0 0 6px rgba(244, 114, 182, 0.5); }
+      50% { transform: scale(1.2); box-shadow: 0 0 12px rgba(230, 194, 128, 0.95); }
+    }
+
+    .journey-ambient-glow {
+      position: absolute;
+      z-index: 0;
+      left: 50%;
+      top: 18%;
+      width: 82%;
+      height: 74%;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, var(--journey-glow, rgba(230, 194, 128, 0.22)), transparent 70%);
+      filter: blur(42px);
+      opacity: 0.9;
+      pointer-events: none;
+      transition: background 0.55s ease, opacity 0.55s ease;
+    }
+
+    .journey-card {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(190px, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(28px, 5vw, 64px);
+      min-height: 360px;
+      padding: clamp(24px, 4vw, 52px);
+      overflow: hidden;
+      border: 1px solid rgba(230, 194, 128, 0.32);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(26, 11, 18, 0.82), rgba(11, 7, 9, 0.9));
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(251, 207, 232, 0.1);
+      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(24px);
+      transition: opacity 0.22s ease, transform 0.22s ease, border-color 0.4s ease;
+    }
+
+    .journey-card.is-switching {
+      opacity: 0.28;
+      transform: translateX(12px);
+    }
+
+    .journey-identity {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+    }
+
+    .journey-watermark {
+      position: absolute;
+      top: -0.22em;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(230, 194, 128, 0.15);
+      font: 500 clamp(11rem, 19vw, 16rem)/1 "Cormorant Garamond", serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .journey-emblem {
+      position: relative;
+      z-index: 1;
+      width: 142px;
+      height: 142px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border: 1px solid rgba(230, 194, 128, 0.62);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, rgba(251, 207, 232, 0.2), rgba(158, 27, 50, 0.22) 50%, rgba(11, 7, 9, 0.88));
+      box-shadow: 0 0 24px rgba(244, 114, 182, 0.2), inset 0 0 25px rgba(230, 194, 128, 0.09);
+      font-size: 4rem;
+      filter: drop-shadow(0 0 18px rgba(244, 114, 182, 0.34));
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .journey-badge {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      justify-content: center;
+      max-width: 100%;
+      padding: 8px 13px;
+      border: 1px solid rgba(230, 194, 128, 0.38);
+      border-radius: 9999px;
+      background: rgba(11, 7, 9, 0.62);
+      color: #E6C280;
+      font: 600 0.68rem/1.3 "Plus Jakarta Sans", sans-serif;
+      letter-spacing: 0.16em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .journey-copy {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .journey-story-title {
+      margin: 0;
+      color: #FAF3F0;
+      font: 600 clamp(2.2rem, 4vw, 3.2rem)/1.08 "Cormorant Garamond", serif;
+    }
+
+    .journey-story-divider {
+      width: 64px;
+      height: 1px;
+      margin: 19px 0;
+      background: linear-gradient(90deg, #E6C280, rgba(244, 114, 182, 0.4));
+      box-shadow: 0 0 10px rgba(230, 194, 128, 0.36);
+    }
+
+    .journey-story-text {
+      margin: 0;
+      color: rgba(250, 243, 240, 0.85);
+      font: 400 clamp(0.9rem, 1.2vw, 1rem)/1.9 "Plus Jakarta Sans", sans-serif;
+    }
+
+    .journey-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 26px;
+    }
+
+    .journey-nav {
+      padding: 8px 0;
+      border: 0;
+      background: transparent;
+      color: rgba(251, 207, 232, 0.74);
+      cursor: pointer;
+      font: 500 0.8rem "Plus Jakarta Sans", sans-serif;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .journey-nav:hover {
+      color: #E6C280;
+    }
+
+    .journey-nav[data-direction="previous"]:hover {
+      transform: translateX(-3px);
+    }
+
+    .journey-nav[data-direction="next"]:hover {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 640px) {
+      #every-side { padding-inline: 12px; }
+
+      .journey-stepper {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .journey-stepper::before { display: none; }
+
+      .journey-tab {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-height: 64px;
+        gap: 10px;
+        padding: 9px 10px;
+        border-color: rgba(230, 194, 128, 0.17);
+        background: rgba(26, 11, 18, 0.48);
+        text-align: left;
+      }
+
+      .journey-tab-marker {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+        font-size: 0.7rem;
+      }
+
+      .journey-tab-label {
+        font-size: 0.68rem;
+        text-align: left;
+      }
+
+      .journey-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        min-height: 0;
+        padding: 25px 20px;
+        border-radius: 25px;
+      }
+
+      .journey-identity { min-height: 190px; }
+
+      .journey-watermark {
+        top: -0.28em;
+        font-size: 10rem;
+      }
+
+      .journey-emblem {
+        width: 112px;
+        height: 112px;
+        margin-bottom: 14px;
+        font-size: 3.2rem;
+      }
+
+      .journey-badge {
+        padding: 7px 10px;
+        font-size: 0.6rem;
+      }
+
+      .journey-story-title {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+        text-align: center;
+      }
+
+      .journey-story-divider { margin: 16px auto; }
+      .journey-story-text { font-size: 0.88rem; line-height: 1.8; }
+      .journey-footer { padding-top: 20px; }
+      .journey-nav { font-size: 0.72rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .journey-tab,
+      .journey-tab-marker,
+      .journey-tab-label,
+      .journey-card,
+      .journey-emblem,
+      .journey-nav {
+        transition: none;
+      }
+
+      .journey-tab.is-active .journey-tab-indicator { animation: none; }
+    }
+
+    #background-glow,
+    #moving-lines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .pink-glow {
+      position: absolute;
+      width: 34vw;
+      height: 34vw;
+      min-width: 260px;
+      min-height: 260px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.18), rgba(244, 114, 182, 0.05) 38%, transparent 72%);
+      filter: blur(38px);
+      animation: pinkGlowMove 14s ease-in-out infinite alternate;
+    }
+
+    .pink-glow.one { left: -12vw; top: 12vh; }
+    .pink-glow.two { right: -14vw; bottom: 4vh; animation-delay: -7s; }
+
+    @keyframes pinkGlowMove {
+      0% { transform: translate3d(-4%, -3%, 0) scale(0.92); opacity: 0.55; }
+      50% { transform: translate3d(10%, 7%, 0) scale(1.12); opacity: 0.9; }
+      100% { transform: translate3d(-2%, 14%, 0) scale(1); opacity: 0.65; }
+    }
+
+    .moving-line {
+      position: absolute;
+      width: 44vw;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(251, 207, 232, 0.42), rgba(244, 114, 182, 0.16), transparent);
+      box-shadow: 0 0 10px rgba(244, 114, 182, 0.26);
+      transform-origin: center;
+      animation: lineDrift 18s linear infinite;
+    }
+
+    .moving-line:nth-child(1) { left: -48vw; top: 24%; transform: rotate(-8deg); }
+    .moving-line:nth-child(2) { right: -50vw; top: 58%; transform: rotate(11deg); animation-delay: -6s; animation-direction: reverse; }
+    .moving-line:nth-child(3) { left: 20vw; bottom: 12%; transform: rotate(-3deg); animation-delay: -11s; }
+
+    @keyframes lineDrift {
+      0% { translate: -12vw 0; opacity: 0; }
+      12% { opacity: 0.72; }
+      88% { opacity: 0.72; }
+      100% { translate: 112vw 0; opacity: 0; }
+    }
+
+    .page-divider {
+      position: absolute;
+      left: 50%;
+      bottom: 22px;
+      width: min(560px, calc(100% - 48px));
+      height: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(251, 207, 232, 0.72);
+      pointer-events: none;
+    }
+
+    .page-divider::before,
+    .page-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(230, 194, 128, 0.5), rgba(244, 114, 182, 0.75));
+      box-shadow: 0 0 10px rgba(244, 114, 182, 0.22);
+    }
+
+    .page-divider::after {
+      transform: scaleX(-1);
+    }
+
+    .page-divider span {
+      font-size: 13px;
+      filter: drop-shadow(0 0 8px rgba(244, 114, 182, 0.5));
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    .photo-placeholder {
+      background:
+        radial-gradient(circle at 50% 42%, rgba(244, 114, 182, 0.20), transparent 42%),
+        linear-gradient(145deg, rgba(26, 11, 18, 0.95), rgba(14, 8, 11, 0.98));
+    }
+
+    #favorite-gallery img {
+      filter: grayscale(1);
+      animation: favoritePhotoColor 4s ease-in-out infinite;
+      transition: filter 0.35s ease;
+    }
+
+    #favorite-gallery figure:hover img,
+    #favorite-gallery img:hover {
+      animation: none;
+      filter: grayscale(0);
+    }
+
+    @keyframes favoritePhotoColor {
+      0%, 100% { filter: grayscale(1); }
+      50% { filter: grayscale(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #favorite-gallery img {
+        animation: none;
+        filter: grayscale(1);
+      }
+
+      #favorite-gallery figure:hover img,
+      #favorite-gallery img:hover {
+        filter: grayscale(0);
+      }
+    }
+
+    .music-widget {
+      position: relative;
+      width: min(288px, calc(100vw - 32px));
+    }
+
+    .spotify-mini-player {
+      height: 80px;
+    }
+
+    @media (max-width: 640px) {
+      #favorite-gallery {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: calc((100% - 16px) / 2);
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: rgba(230, 194, 128, 0.42) transparent;
+        scrollbar-width: thin;
+        padding: 8px 4px 16px;
+      }
+
+      #favorite-gallery > figure {
+        min-width: 0;
+        scroll-snap-align: start;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-rosepink/30 selection:text-softpink">
+
+  <div id="ambient-hearts" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       1. PASSCODE LOCK SCREEN — PIN 6 KOLOM (12 JULI 2026 -> 120726)
+  ========================================================== -->
+  <section id="lock-screen" class="min-h-screen flex items-center justify-center px-4 py-12 transition-opacity duration-700">
+    <div id="lock-card" class="glass-fancy w-full max-w-md rounded-3xl p-7 sm:p-10 text-center relative overflow-hidden">
+      <div class="absolute -top-12 -right-12 w-32 h-32 bg-crimson/25 rounded-full blur-2xl"></div>
+      <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-rosepink/20 rounded-full blur-2xl"></div>
+
+      <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-crimson/20 border border-champagne/40 text-champagne mb-5 animate-float">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </div>
+
+      <p class="text-xs uppercase tracking-[0.28em] text-champagne/80 mb-2">Private Access</p>
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold text-ivory mb-2">Our Secret Date</h1>
+      <p class="text-sm text-softpink/80 mb-7">Masukkan 6 digit tanggal jadian kita (DDMMYY)</p>
+
+
+      <!-- 6 Kolom PIN -->
+      <div id="pin-container" class="grid grid-cols-6 gap-2 sm:gap-3 max-w-xs mx-auto mb-6">
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+        <input type="text" inputmode="numeric" maxlength="1" class="pin-box w-full aspect-square text-center text-xl sm:text-2xl font-serif font-semibold bg-velvet/85 border border-champagne/35 rounded-xl text-ivory transition" />
+      </div>
+
+      <button
+        onclick="checkPin()"
+        class="edge-glow relative w-full py-3.5 rounded-2xl font-medium text-sm tracking-wide text-ivory bg-gradient-to-r from-crimson via-rose-600 to-rosepink hover:brightness-110 active:scale-[0.99] transition shadow-lg shadow-crimson/30 cursor-pointer"
+      >
+        Buka Cerita Kita ✨
+      </button>
+
+      <p id="lock-error" class="text-xs text-rosepink mt-4 min-h-[18px] transition-opacity opacity-0">
+        Eits salah sayang~ coba ingat tanggal jadian kita 🤍
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MAIN CONTENT (MUNCUL SETELAH PIN 120726 BENAR)
+  ========================================================== -->
+  <main id="main-content" class="hidden opacity-0 transition-opacity duration-1000 max-w-4xl mx-auto px-5 py-16 md:py-24">
+    <div id="music-widget" class="music-widget relative z-30 mb-2 ml-auto flex flex-col items-end gap-2">
+      <button
+        id="music-toggle"
+        type="button"
+        aria-label="Play Spotify"
+        aria-controls="spotify-form"
+        aria-expanded="false"
+        class="edge-glow relative inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-champagne/45 bg-burgundy/90 px-3 text-sm font-medium text-softpink shadow-lg shadow-crimson/30 transition hover:scale-105"
+      >
+        <span aria-hidden="true">♫</span>
+        <span id="music-toggle-label">Play Spotify</span>
+      </button>
+
+      <form id="spotify-form" class="hidden edge-glow w-full rounded-2xl border border-champagne/35 bg-burgundy/95 p-2 shadow-xl">
+        <div class="flex gap-2">
+          <input
+            id="spotify-link"
+            type="url"
+            required
+            aria-label="Tautan Spotify"
+            placeholder="♫"
+            class="min-w-0 flex-1 rounded-xl border border-champagne/30 bg-velvet/80 px-3 py-2 text-sm text-ivory placeholder:text-softpink/50 focus:border-rosepink focus:outline-none focus:ring-2 focus:ring-rosepink/20"
+          />
+          <button
+            type="submit"
+            aria-label="Putar musik"
+            class="edge-glow relative grid h-10 w-10 shrink-0 place-items-center rounded-full border border-champagne/40 bg-gradient-to-r from-crimson to-rosepink text-ivory transition hover:brightness-110"
+          >
+            <span aria-hidden="true">▶</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="spotify-player-wrap" class="hidden w-full overflow-hidden rounded-xl border border-champagne/35 bg-velvet/90 shadow-xl">
+        <iframe
+          id="spotify-player"
+          title="Spotify music player"
+          class="spotify-mini-player block w-full border-0"
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+      <p id="spotify-status" class="sr-only" role="status" aria-live="polite"></p>
+    </div>
+
+    <!-- =======================================================
+         2. UCAPAN TERIMA KASIH UNTUK ORANG YANG KUSAYANG
+    ======================================================== -->
+    <section id="hero-section" class="page-section hero-section text-center pt-4">
+      <span class="floral-ornament left" aria-hidden="true">❀</span>
+      <span class="floral-ornament right" aria-hidden="true">♡</span>
+
+      <div class="hero-reveal hero-reveal-1 inline-flex mx-auto w-fit justify-center items-center gap-2 px-4 py-1.5 rounded-full border border-champagne/30 bg-burgundy/60 text-champagne text-xs tracking-[0.2em] uppercase text-center">
+        <span>✦</span> 12 Juli 2026 • For You <span>✦</span>
+      </div>
+
+      <h1 id="hero-title" class="hero-reveal hero-reveal-2 hero-serif mx-auto max-w-[1200px] px-0 text-[clamp(1.4rem,6vw,5.6rem)] font-medium leading-[0.94] text-balance">
+        <span id="hero-title-line-1" class="hero-title-line text-ivory"></span>
+        <span id="hero-title-line-2" class="hero-title-line hero-title-accent"></span>
+      </h1>
+
+      <div class="hero-message-wrap">
+        <div class="hero-reveal hero-reveal-3 hero-hairline" aria-hidden="true"><span>✦</span></div>
+        <p id="opening-message" class="hero-reveal hero-reveal-4 mx-auto max-w-2xl text-base font-light leading-relaxed text-ivory/90 md:text-lg"></p>
+        <div class="hero-reveal hero-reveal-5 hero-hairline" aria-hidden="true"><span>✦</span></div>
+      </div>
+
+      <p class="hero-reveal hero-reveal-6 hero-signature">— Selalu untukmu</p>
+
+      <div class="hero-reveal hero-reveal-7">
+        <a href="#chapter-story" class="hero-scroll-cue">
+          LIHAT AWAL CERITA KITA <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="page-divider" aria-hidden="true"><span>♡</span></div>
+
+    <!-- =======================================================
+         3. CHAPTER: OUR STORY (TIKTOK -> DISCORD -> WHATSAPP)
+    ======================================================== -->
+    <section id="chapter-story" class="page-section space-y-12">
+      <span class="floral-ornament left" aria-hidden="true">✿</span>
+      <span class="floral-ornament right" aria-hidden="true">♥</span>
+
+      <div class="text-center space-y-3">
+        <p class="text-xs uppercase tracking-[0.3em] text-rosepink">How It Started</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-ivory">
+          Chapter: Our Story
+        </h2>
+        <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent mx-auto"></div>
+        <p class="text-sm md:text-base text-softpink/80 max-w-lg mx-auto">
+          Berawal dari notifikasi random di HP, sampai akhirnya jadi orang yang paling dicari tiap hari.
+        </p>
+      </div>
+
+      <!-- 3 Jejak Awal Pertemuan: TikTok -> Discord -> WA -->
+      <div id="origin-steps" class="story-timeline space-y-0">
+        <!-- Di-render dari CONFIG.originSteps -->
+      </div>
+      <div class="page-divider" aria-hidden="true"><span>✿</span></div>
+    </section>
+
+    <!-- =====================================================
+         4. 4 FASE PERJALANAN KITA
+    ====================================================== -->
+    <section id="every-side" class="page-section space-y-8">
+      <span class="floral-ornament left" aria-hidden="true">✿</span>
+      <span class="floral-ornament right" aria-hidden="true">♡</span>
+
+      <div class="text-center space-y-3">
+        <p class="text-xs uppercase tracking-[0.3em] text-champagne">EVERY SIDE OF US</p>
+        <h2 class="journey-serif text-5xl sm:text-6xl font-semibold leading-none text-ivory">Our Journey</h2>
+        <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent mx-auto"></div>
+        <p class="journey-sans mx-auto max-w-2xl text-sm sm:text-base leading-relaxed text-softpink/80">
+          Karena mencintaimu berarti menerima setiap musim yang kita lewati bersama.
+        </p>
+      </div>
+
+      <div class="journey-stage">
+        <div
+          id="journey-ambient-glow"
+          class="journey-ambient-glow"
+          style="--journey-glow: rgba(230, 194, 128, 0.22)"
+          aria-hidden="true"
+        ></div>
+
+        <div id="journey-tabs" class="journey-stepper" role="tablist" aria-label="Pilih fase perjalanan kita"></div>
+
+        <article
+          id="journey-spotlight"
+          class="journey-card"
+          role="tabpanel"
+          aria-labelledby="journey-tab-01"
+        >
+          <div class="journey-identity">
+            <span id="journey-watermark" class="journey-watermark" aria-hidden="true"></span>
+            <div id="journey-emblem" class="journey-emblem" aria-hidden="true"></div>
+            <span id="journey-badge" class="journey-badge"></span>
+          </div>
+
+          <div class="journey-copy">
+            <h3 id="journey-title" class="journey-story-title" aria-live="polite"></h3>
+            <div class="journey-story-divider" aria-hidden="true"></div>
+            <p id="journey-story" class="journey-story-text"></p>
+            <div class="journey-footer">
+              <button type="button" class="journey-nav" data-direction="previous">← Sebelumnya</button>
+              <span id="journey-position" class="sr-only" aria-live="polite"></span>
+              <button type="button" class="journey-nav" data-direction="next">Selanjutnya →</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="page-divider" aria-hidden="true"><span>♡</span></div>
+    </section>
+
+    <!-- =======================================================
+         5. GALERI FOTO FAVORITE PERSON
+    ======================================================== -->
+    <section class="page-section space-y-8">
+      <span class="floral-ornament left" aria-hidden="true">❀</span>
+      <span class="floral-ornament right" aria-hidden="true">♡</span>
+
+      <div class="text-center space-y-3">
+        <p class="text-xs uppercase tracking-[0.3em] text-rosepink">Little Moments</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-ivory">
+          Few Pictures of My Favorite Person
+        </h2>
+        <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-champagne to-transparent mx-auto"></div>
+        <p class="text-sm text-softpink/80 max-w-lg mx-auto">
+          sedikit foto favoritku dari kamu.
+        </p>
+      </div>
+
+      <div id="favorite-gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl w-full mx-auto">
+      </div>
+      <div class="page-divider" aria-hidden="true"><span>♡</span></div>
+    </section>
+
+    <!-- =======================================================
+         6. MY FAVORITE PERSON (MARAH, LUCU, NGAMBEK, SENYUM KAMU)
+    ======================================================== -->
+    <section class="page-section space-y-8">
+      <span class="floral-ornament left" aria-hidden="true">❀</span>
+      <span class="floral-ornament right" aria-hidden="true">♥</span>
+
+      <div class="text-center space-y-2">
+        <p class="text-xs uppercase tracking-[0.3em] text-champagne">All About You</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-ivory">
+          My Favorite Person
+        </h2>
+      </div>
+
+      <div class="glass-fancy rounded-3xl p-6 sm:p-10 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-center">
+          <!-- Bingkai Foto Polaroid Fancy -->
+          <div class="md:col-span-5 flex justify-center">
+            <div class="bg-ivory p-3.5 pb-6 rounded-2xl shadow-2xl border border-champagne/50 transform -rotate-2 hover:rotate-0 transition duration-500 max-w-[270px] w-full">
+              <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-burgundy">
+                <img
+                  id="fav-photo"
+                  src=""
+                  alt="My Favorite Person"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <p id="fav-caption" class="font-hand text-2xl text-burgundy text-center mt-3">
+              </p>
+            </div>
+          </div>
+
+          <!-- Kata-Kata Spesial & 4 Hal yang Kusuka dari Kamu -->
+          <div class="md:col-span-7 space-y-5 text-center md:text-left">
+            <div class="inline-block px-3.5 py-1 rounded-full bg-crimson/25 border border-rosepink/30 text-softpink text-xs tracking-wider">
+              Everything I Adore About You
+            </div>
+            <h3 id="fav-subtitle" class="font-serif text-2xl sm:text-3xl text-champagne font-semibold leading-snug">
+            </h3>
+            <p id="fav-description" class="text-sm sm:text-base leading-relaxed text-ivory/85 font-light">
+            </p>
+
+            <!-- 4 Badges: Suka marah, suka lucu, suka ngambek, suka senyum kamu -->
+            <div id="fav-traits" class="grid grid-cols-2 gap-2.5 pt-2">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-divider" aria-hidden="true"><span>❀</span></div>
+    </section>
+
+    <!-- =======================================================
+         7. CUTE BUTTON -> UCAPAN SAYANG & HARAPAN TERUS BERSATU
+    ======================================================== -->
+    <section class="page-section text-center pb-14 space-y-8">
+      <span class="floral-ornament left" aria-hidden="true">✿</span>
+      <span class="floral-ornament right" aria-hidden="true">♡</span>
+
+      <div class="space-y-3">
+        <p class="text-xs uppercase tracking-[0.28em] text-softpink/75">Our Promise & Hope</p>
+        <button
+          id="cute-note-btn"
+          onclick="openLoveNote()"
+          class="edge-glow group relative inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium text-sm sm:text-base text-ivory bg-gradient-to-r from-crimson via-rose-600 to-rosepink border border-champagne/40 shadow-xl shadow-crimson/35 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+        >
+          <span>Klik Aku Dong, Sayang</span>
+          <span class="text-lg group-hover:rotate-12 transition-transform">💌</span>
+        </button>
+      </div>
+
+      <!-- Note Ucapan Sayang & Harapan -->
+      <div id="love-note-box" class="hidden max-w-xl mx-auto">
+        <div class="love-note-glass rounded-3xl p-7 sm:p-9 text-left relative animate-pop">
+          <div class="flex items-center justify-between border-b border-champagne/20 pb-4 mb-5">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.25em] text-champagne">Untuk Pacarku Sayang</p>
+              <h4 class="font-serif text-2xl sm:text-3xl text-softpink font-semibold">
+                Sayangku & Harapan Kita
+              </h4>
+            </div>
+          </div>
+
+          <p id="love-note-text" class="min-h-[150px] text-sm sm:text-base leading-8 text-ivory/95 font-light whitespace-normal"></p>
+
+          <div class="mt-6 pt-4 border-t border-champagne/15 flex items-center justify-between">
+            <span class="font-hand text-xl text-champagne">Selamanya milikmu</span>
+            <button
+              onclick="nextNote()"
+              class="text-xs text-rosepink hover:text-softpink underline underline-offset-4 cursor-pointer"
+            >
+              Baca harapan lainnya
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pb-8 pt-2 text-center font-hand text-xl text-champagne/75">
+      Made with love <span class="text-rosepink/80" aria-hidden="true">♡</span> Zaki
+    </footer>
+
+  </main>
+
+  <!-- =========================================================
+       DATA KUSTOMISASI (SEMUA ISI CERITA KALIAN)
+  ========================================================== -->
+  <script>
+    const CONFIG = {
+      // 1. Kode tanggal jadian: 12 Juli 2026 -> 120726
+      secretCode: "120726",
+
+      // 2. Ucapan terima kasih untuk orang yang kusayang
+      heroTitle: ["Terima Kasih Sudah Hadir,", "Sayangku"],
+      openingMessage:
+        "Terima kasih sudah sayang aku, sudah sabar hadapin aku, dan tetap milih buat ada di sampingku sampai hari ini. Di tengah hari-hariku yang kadang berantakan dan capek, kehadiran kamu selalu jadi alasan kenapa semuanya terasa lebih ringan dan hangat.",
+
+      // 3. Perjalanan awal: Ketemu di TikTok -> Lanjut Discord -> Jadian di WA
+      originSteps: [
+        {
+          step: "Part 01 • TikTok",
+          title: "Ketemu di TikTok",
+          icon: "",
+          desc: "Gak pernah kepikiran sebelumnya, cuma dari saling nemu di TikTok malah bisa nyambung sejauh ini."
+        },
+        {
+          step: "Part 02 • Discord",
+          title: "Lanjut di Discord",
+          icon: "",
+          desc: "Pindah ke Discord dan mulai sering ngobrol lama. Dari yang cuma iseng nemenin, lama-lama malah jadi kebiasaan tiap hari."
+        },
+        {
+          step: "Part 03 • WhatsApp",
+          title: "Jadian di WA (12.07.26)",
+          icon: "",
+          desc: "Akhirnya di WhatsApp tanggal 12 Juli 2026, kita mutusin buat gak cuma sekadar deket lagi, tapi beneran bareng."
+        }
+      ],
+
+      // 4. 4 Fase Perjalanan Kita
+      chapters: [
+        {
+          number: "01",
+          tabLabel: "Hari-Hari Seru",
+          badge: "Our Happy Days",
+          title: "Hari-Hari Seru",
+          icon: "✨",
+          glowColor: "rgba(230, 194, 128, 0.22)",
+          story:
+            "Waktu kita lagi nyambung banget di chat atau call, ketawa gara-gara hal receh, dan cerita ngalor-ngidul sampai lupa jam tidur. Meskipun kepisah jarak dan cuma lewat layar HP, obrolan biasa bareng kamu selalu jadi hal paling ditunggu setiap harinya."
+        },
+        {
+          number: "02",
+          tabLabel: "Lagi Sama-Sama Diem",
+          badge: "Our Quiet Days",
+          title: "Hari Dimana Kita Diam",
+          icon: "🌙",
+          glowColor: "rgba(251, 207, 232, 0.14)",
+          story:
+            "Ada hari di mana chat nggak seramai biasanya—sama-sama capek sama kesibukan masing-masing di kota yang beda atau bingung mau mulai cerita dari mana. Tapi di balik sepinya notifikasi, sebenarnya kita tetap saling kepikiran dan nunggu waktu luang buat call lagi."
+        },
+        {
+          number: "03",
+          tabLabel: "Pas Lagi Ribut",
+          badge: "Our Stormy Days",
+          title: "Hari Dimana Kita Bertengkar",
+          icon: "🥀",
+          glowColor: "rgba(158, 27, 50, 0.28)",
+          story:
+            "Momen pas ego lagi sama-sama tinggi, beda pendapat lewat ketikan yang sering bikin salah tangkap, dan kepala panas karena nggak bisa langsung ketemu buat ngobrol tatap muka. Kadang kata-kata keluar lebih cepat daripada mikir, bikin dada sesak sendiri padahal nggak ada yang pengen nyakitin"
+        },
+        {
+          number: "04",
+          tabLabel: "Baikan Lagi",
+          badge: "Healing & Forgiving",
+          title: "Hari Dimana Kita Saling Minta Maaf",
+          icon: "🤍",
+          glowColor: "rgba(244, 114, 182, 0.24)",
+          story:
+            "Bagian paling melegakan setelah ribut: nurunin gengsi, dengerin suara satu sama lain lagi tanpa nyalahin, dan sadar kalau hubungan ini jauh lebih penting daripada menang debat. Capeknya langsung hilang begitu kita sama-sama milih buat baikan dan bertahan meski lagi jauh."
+        }
+      ],
+
+      // 5. My Favorite Person (Ganti photoUrl dengan file fotomu, misal: "foto-pacar.jpg")
+      favoritePerson: {
+        photoUrl: "images/6.jpeg",
+        caption: "My favorite person 🤍",
+        subtitle: "Semua versi kamu selalu punya tempat di aku.",
+        description:
+          "Mau itu pas kamu lagi bawel cerita ini-itu, lagi ngambek diem-dieman, atau lagi ketawa lepas gara-gara hal sepele—semuanya selalu bikin aku kangen. Nggak perlu jadi orang lain, versi kamu yang sekarang udah paling pas buat aku.",
+        traits: [
+          { emoji: "😤", label: "Suka marah kamu" },
+          { emoji: "🧸", label: "Suka lucu kamu" },
+          { emoji: "🥺", label: "Suka ngambek kamu" },
+          { emoji: "😊", label: "Suka senyum kamu" }
+        ]
+      },
+
+      // 6. Isi src dengan path foto, misalnya "images/momen-1.jpg"
+      favoritePhotos: [
+        { src: "images/W.jpeg", caption: "Moment 01" },
+        { src: "images/1.jpeg", caption: "Moment 02" },
+        { src: "images/2.jpeg", caption: "Moment 03" },
+        { src: "images/3.jpeg", caption: "Moment 04" },
+        { src: "images/4.jpeg", caption: "Moment 05" },
+        { src: "images/5.jpeg", caption: "Moment 06" }
+      ],
+
+      // 7. Ucapan sayang & harapan bisa terus bersatu
+      loveNotes: [
+        "Makasih ya udah bertahan bareng aku sejauh ini sejak 12 Juli 2026, meskipun belum bisa ketemu tiap hari. Harapanku simpel aja: semoga kita tetap saling jaga di kota masing-masing, nggak gampang nyerah pas lagi capek, dan terus jalan bareng sampai nanti akhirnya bisa sering ketemu tanpa harus nunggu lama.",
+        "Seberat apa pun beda pendapat atau salah paham yang nanti kita lewatin lewat chat, semoga kita selalu milih buat baikan lagi dibanding pergi. Aku sayang banget sama kamu—dan aku pengen kita tetap saling pilih di hari-hari yang biasa aja, bukan cuma pas lagi seneng",
+        "Dari yang awalnya cuma ketemu di TikTok, lanjut ngobrol di Discord, sampai sekarang tiap hari di WhatsApp—perjalanan kita masih panjang banget. Tetap bareng aku ya, pelan-pelan kita wujudin semua rencana yang sering kita obrolin dari jauh"
+      ]
+    };
+
+    // ================= LOGIC RENDER & PIN 6 KOLOM =================
+    let currentNoteIndex = 0;
+    let noteTypingTimer = null;
+    let activeJourneyIndex = 0;
+    let journeyTransitionTimer = null;
+
+    // Render teks utama
+    document.getElementById("hero-title-line-1").textContent = CONFIG.heroTitle[0];
+    document.getElementById("hero-title-line-2").textContent = CONFIG.heroTitle[1];
+    document.getElementById("opening-message").textContent = CONFIG.openingMessage;
+    document.getElementById("fav-photo").src = CONFIG.favoritePerson.photoUrl;
+    document.getElementById("fav-caption").textContent = CONFIG.favoritePerson.caption;
+    document.getElementById("fav-subtitle").textContent = CONFIG.favoritePerson.subtitle;
+    document.getElementById("fav-description").textContent = CONFIG.favoritePerson.description;
+
+    // Render 3 Origin Steps (TikTok -> Discord -> WA)
+    const originContainer = document.getElementById("origin-steps");
+    CONFIG.originSteps.forEach((item, index) => {
+      const box = document.createElement("div");
+      box.className = "story-item";
+      box.innerHTML = `
+        <div class="story-bullet text-sm font-semibold text-ivory">${String(index + 1).padStart(2, "0")}</div>
+        <div class="timeline-box rounded-2xl px-5 py-5 sm:px-6 sm:py-5">
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.20em] text-champagne">${item.step}</p>
+            <span class="text-lg opacity-80">${item.icon}</span>
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-semibold text-ivory mb-1.5">${item.title}</h3>
+          <p class="text-xs sm:text-sm leading-relaxed text-ivory/75 font-light">${item.desc}</p>
+        </div>
+      `;
+      originContainer.appendChild(box);
+    });
+
+    const journeyTabsContainer = document.getElementById("journey-tabs");
+    const journeyTabButtons = CONFIG.chapters.map((item, index) => {
+      const tab = document.createElement("button");
+      tab.type = "button";
+      tab.id = `journey-tab-${item.number}`;
+      tab.className = "journey-tab";
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-controls", "journey-spotlight");
+      tab.setAttribute("aria-label", `${item.number} • ${item.tabLabel}`);
+      tab.innerHTML = `
+        <span class="journey-tab-marker" aria-hidden="true">
+          ${item.number}
+          <span class="journey-tab-indicator"></span>
+        </span>
+        <span class="journey-tab-label">${item.number} <span aria-hidden="true">•</span> ${item.tabLabel}</span>
+      `;
+      tab.addEventListener("click", () => selectJourneyPhase(index));
+      journeyTabsContainer.appendChild(tab);
+      return tab;
+    });
+
+    const journeyCard = document.getElementById("journey-spotlight");
+    const journeyWatermark = document.getElementById("journey-watermark");
+    const journeyEmblem = document.getElementById("journey-emblem");
+    const journeyBadge = document.getElementById("journey-badge");
+    const journeyTitle = document.getElementById("journey-title");
+    const journeyStory = document.getElementById("journey-story");
+    const journeyPosition = document.getElementById("journey-position");
+    const journeyAmbientGlow = document.getElementById("journey-ambient-glow");
+
+    function renderJourneyPhase(index) {
+      const item = CONFIG.chapters[index];
+      journeyWatermark.textContent = item.number;
+      journeyEmblem.textContent = item.icon;
+      journeyBadge.textContent = item.badge;
+      journeyTitle.textContent = item.title;
+      journeyStory.textContent = item.story;
+      journeyPosition.textContent = `Fase ${index + 1} dari ${CONFIG.chapters.length}`;
+      journeyCard.setAttribute("aria-labelledby", journeyTabButtons[index].id);
+      journeyAmbientGlow.style.setProperty("--journey-glow", item.glowColor);
+    }
+
+    function selectJourneyPhase(index) {
+      if (index === activeJourneyIndex) return;
+
+      activeJourneyIndex = index;
+      journeyTabButtons.forEach((tab, tabIndex) => {
+        const isActive = tabIndex === activeJourneyIndex;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+      });
+
+      if (journeyTransitionTimer) {
+        clearTimeout(journeyTransitionTimer);
+        journeyTransitionTimer = null;
+      }
+
+      journeyCard.classList.add("is-switching");
+      const updateCard = () => {
+        renderJourneyPhase(activeJourneyIndex);
+        journeyCard.classList.remove("is-switching");
+        journeyTransitionTimer = null;
+      };
+
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        updateCard();
+      } else {
+        journeyTransitionTimer = setTimeout(updateCard, 180);
+      }
+    }
+
+    journeyTabButtons.forEach((tab, index) => {
+      const isActive = index === activeJourneyIndex;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      tab.tabIndex = isActive ? 0 : -1;
+    });
+    renderJourneyPhase(activeJourneyIndex);
+
+    journeyTabsContainer.addEventListener("keydown", (event) => {
+      const currentIndex = journeyTabButtons.indexOf(document.activeElement);
+      if (currentIndex < 0) return;
+
+      let nextIndex;
+      if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % journeyTabButtons.length;
+      else if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + journeyTabButtons.length) % journeyTabButtons.length;
+      else if (event.key === "Home") nextIndex = 0;
+      else if (event.key === "End") nextIndex = journeyTabButtons.length - 1;
+      else return;
+
+      event.preventDefault();
+      journeyTabButtons[nextIndex].focus();
+      selectJourneyPhase(nextIndex);
+    });
+
+    document.querySelectorAll(".journey-nav").forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = button.dataset.direction === "next" ? 1 : -1;
+        const nextIndex = (activeJourneyIndex + direction + CONFIG.chapters.length) % CONFIG.chapters.length;
+        selectJourneyPhase(nextIndex);
+      });
+    });
+
+    // Render 4 Traits di My Favorite Person
+    const traitsContainer = document.getElementById("fav-traits");
+    CONFIG.favoritePerson.traits.forEach((trait) => {
+      const pill = document.createElement("div");
+      pill.className = "flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-velvet/70 border border-champagne/25 text-xs sm:text-sm text-softpink";
+      pill.innerHTML = `<span>${trait.emoji}</span><span>${trait.label}</span>`;
+      traitsContainer.appendChild(pill);
+    });
+
+    const gallery = document.getElementById("favorite-gallery");
+    CONFIG.favoritePhotos.forEach((photo, index) => {
+      const frame = document.createElement("figure");
+      frame.className = "romantic-frame bg-ivory p-2.5 sm:p-3 pb-4 sm:pb-5 rounded-2xl shadow-2xl border border-champagne/40 transform transition duration-500 hover:-translate-y-1 hover:rotate-0";
+      frame.classList.add(index % 2 === 0 ? "-rotate-1" : "rotate-1");
+      frame.innerHTML = `
+        <div class="photo-placeholder aspect-[4/5] w-full overflow-hidden rounded-xl border border-champagne/20 flex flex-col items-center justify-center gap-3 text-softpink/75">
+          <span class="text-4xl text-rosepink/80" aria-hidden="true">♡</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-[0.16em]">Tambah foto</span>
+        </div>
+        <figcaption class="font-hand text-lg sm:text-xl text-burgundy text-center mt-2">${photo.caption}</figcaption>
+      `;
+
+      if (photo.src) {
+        const image = document.createElement("img");
+        image.src = photo.src;
+        image.alt = photo.caption;
+        image.loading = "lazy";
+        image.className = "aspect-[4/5] w-full object-cover rounded-xl border border-champagne/20";
+        frame.querySelector(".photo-placeholder").replaceWith(image);
+      }
+
+      gallery.appendChild(frame);
+    });
+
+    const spotifyForm = document.getElementById("spotify-form");
+    const musicToggle = document.getElementById("music-toggle");
+    musicToggle.addEventListener("click", () => {
+      const isOpen = !spotifyForm.classList.toggle("hidden");
+      musicToggle.setAttribute("aria-expanded", String(isOpen));
+      musicToggle.setAttribute("aria-label", isOpen ? "Tutup pilihan musik Spotify" : "Play Spotify");
+    });
+
+    const spotifyInput = document.getElementById("spotify-link");
+    spotifyInput.addEventListener("input", () => spotifyInput.setCustomValidity(""));
+
+    spotifyForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const status = document.getElementById("spotify-status");
+      const spotifyPlayer = document.getElementById("spotify-player");
+      const playerWrap = document.getElementById("spotify-player-wrap");
+      let spotifyUrl;
+
+      try {
+        spotifyUrl = new URL(spotifyInput.value.trim());
+      } catch {
+        spotifyInput.setCustomValidity("Masukkan tautan Spotify yang valid.");
+        spotifyInput.reportValidity();
+        status.textContent = "Tautan Spotify tidak valid.";
+        return;
+      }
+
+      const spotifyItem = spotifyUrl.pathname.match(
+        /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?(?:embed\/)?(track|album|playlist|episode|show|artist)\/([a-zA-Z0-9]+)\/?$/i
+      );
+      if (
+        spotifyUrl.protocol !== "https:" ||
+        spotifyUrl.hostname !== "open.spotify.com" ||
+        spotifyUrl.username ||
+        spotifyUrl.password ||
+        !spotifyItem
+      ) {
+        spotifyInput.setCustomValidity("Gunakan tautan lagu, album, playlist, artis, atau podcast dari open.spotify.com.");
+        spotifyInput.reportValidity();
+        status.textContent = "Tautan Spotify tidak valid.";
+        return;
+      }
+
+      spotifyPlayer.src = `https://open.spotify.com/embed/${spotifyItem[1].toLowerCase()}/${spotifyItem[2]}`;
+      playerWrap.classList.remove("hidden");
+      spotifyForm.classList.add("hidden");
+      musicToggle.setAttribute("aria-expanded", "false");
+      musicToggle.setAttribute("aria-label", "Musik Spotify");
+      document.getElementById("music-toggle-label").classList.add("hidden");
+      status.textContent = "Musik siap diputar.";
+    });
+
+    // Setup PIN 6 Kolom (Auto-focus next, Backspace, Paste)
+    const pinInputs = Array.from(document.querySelectorAll(".pin-box"));
+    pinInputs[0].focus();
+
+    pinInputs.forEach((input, idx) => {
+      input.addEventListener("input", (e) => {
+        const clean = e.target.value.replace(/\D/g, "");
+        e.target.value = clean.slice(0, 1);
+
+        if (clean && idx < pinInputs.length - 1) {
+          pinInputs[idx + 1].focus();
+        }
+
+        // Otomatis cek saat ke-6 kolom terisi
+        const currentCode = pinInputs.map((el) => el.value).join("");
+        if (currentCode.length === 6) {
+          checkPin();
+        }
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !e.target.value && idx > 0) {
+          pinInputs[idx - 1].focus();
+        }
+        if (e.key === "Enter") {
+          checkPin();
+        }
+      });
+
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+        const pasted = (e.clipboardData || window.clipboardData)
+          .getData("text")
+          .replace(/\D/g, "")
+          .slice(0, 6);
+        pasted.split("").forEach((char, i) => {
+          if (pinInputs[i]) pinInputs[i].value = char;
+        });
+        if (pasted.length === 6) checkPin();
+      });
+    });
+
+    function checkPin() {
+      const entered = pinInputs.map((el) => el.value).join("");
+      const lockCard = document.getElementById("lock-card");
+      const errorEl = document.getElementById("lock-error");
+
+      if (entered === CONFIG.secretCode) {
+        spawnHearts(20);
+        const lockScreen = document.getElementById("lock-screen");
+        const mainContent = document.getElementById("main-content");
+
+        lockScreen.classList.add("opacity-0");
+        setTimeout(() => {
+          lockScreen.classList.add("hidden");
+          mainContent.classList.remove("hidden");
+          requestAnimationFrame(() => {
+            mainContent.classList.add("reveal-ready");
+            mainContent.classList.remove("opacity-0");
+          });
+        }, 500);
+      } else {
+        lockCard.classList.remove("animate-shake");
+        void lockCard.offsetWidth;
+        lockCard.classList.add("animate-shake");
+        errorEl.classList.remove("opacity-0");
+        pinInputs.forEach((el) => (el.value = ""));
+        pinInputs[0].focus();
+      }
+    }
+
+    // Buka Note Ucapan Sayang & Harapan
+    function openLoveNote() {
+      const box = document.getElementById("love-note-box");
+      box.classList.remove("hidden");
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+      typeLoveText(CONFIG.loveNotes[currentNoteIndex]);
+    }
+
+    function nextNote() {
+      currentNoteIndex = (currentNoteIndex + 1) % CONFIG.loveNotes.length;
+      typeLoveText(CONFIG.loveNotes[currentNoteIndex]);
+    }
+
+    function typeLoveText(text) {
+      if (noteTypingTimer) {
+        clearInterval(noteTypingTimer);
+        noteTypingTimer = null;
+      }
+
+      const textEl = document.getElementById("love-note-text");
+      textEl.textContent = "";
+
+      const words = text.split(/\s+/);
+      let wordIndex = 0;
+
+      noteTypingTimer = setInterval(() => {
+        if (wordIndex >= words.length) {
+          clearInterval(noteTypingTimer);
+          noteTypingTimer = null;
+          return;
+        }
+
+        const word = document.createElement("span");
+        word.className = "love-word";
+        word.textContent = words[wordIndex];
+        textEl.appendChild(word);
+
+        wordIndex++;
+      }, 72);
+    }
+
+    function createAmbientHearts() {
+      const container = document.getElementById("ambient-hearts");
+      const shapes = ["♡", "♥", "✧", "❀", "✦"];
+      for (let i = 0; i < 12; i++) {
+        const heart = document.createElement("span");
+        heart.className = "ambient-heart";
+        heart.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+        heart.style.left = (Math.random() * 100) + "vw";
+        heart.style.fontSize = (10 + Math.random() * 11) + "px";
+        heart.style.animationDuration = (12 + Math.random() * 14) + "s";
+        heart.style.animationDelay = (-Math.random() * 20) + "s";
+        heart.style.setProperty("--drift", ((Math.random() - 0.5) * 180) + "px");
+        container.appendChild(heart);
+      }
+    }
+
+    // Efek hati tambahan hanya secukupnya
+    function spawnHearts(count) {
+      const icons = ["♡", "♥"];
+      const limitedCount = Math.min(count, 6);
+      for (let i = 0; i < limitedCount; i++) {
+        const el = document.createElement("span");
+        el.className = "heart-particle text-sm";
+        el.textContent = icons[Math.floor(Math.random() * icons.length)];
+        el.style.left = Math.random() * 90 + 5 + "vw";
+        el.style.top = Math.random() * 35 + 55 + "vh";
+        el.style.animationDuration = (1.8 + Math.random() * 1.2) + "s";
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 3000);
+      }
+    }
+
+    function setupPageEffects() {
+      const pageSections = document.querySelectorAll("#main-content > .page-section");
+
+      if (!("IntersectionObserver" in window)) {
+        pageSections.forEach((section) => section.classList.add("is-visible"));
+        document.querySelectorAll(".story-item").forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("is-visible");
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+      pageSections.forEach((section) => sectionObserver.observe(section));
+
+      const itemObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+      document.querySelectorAll(".story-timeline").forEach((timeline) => {
+        timeline.querySelectorAll(".story-item").forEach((item, index) => {
+          item.style.transitionDelay = (index * 0.18) + "s";
+          itemObserver.observe(item);
+        });
+      });
+
+      const updateTimelineLight = () => {
+        document.querySelectorAll(".story-timeline").forEach((timeline) => {
+          const rect = timeline.getBoundingClientRect();
+          const viewportPoint = window.innerHeight * 0.72;
+          const traveled = viewportPoint - rect.top;
+          const progress = Math.max(0, Math.min(rect.height - 54, traveled - 54));
+          timeline.style.setProperty("--timeline-progress", progress + "px");
+          timeline.style.setProperty(
+            "--timeline-light-opacity",
+            traveled >= 54 && traveled <= rect.height ? "1" : "0"
+          );
+        });
+      };
+
+      window.addEventListener("scroll", updateTimelineLight, { passive: true });
+      window.addEventListener("resize", updateTimelineLight);
+      updateTimelineLight();
+    }
+
+    createAmbientHearts();
+    setupPageEffects();
+  </script>
+
+  <div id="background-glow" aria-hidden="true">
+    <span class="pink-glow one"></span>
+    <span class="pink-glow two"></span>
+  </div>
+  <div id="moving-lines" aria-hidden="true">
+    <span class="moving-line"></span>
+    <span class="moving-line"></span>
+    <span class="moving-line"></span>
+  </div>
+</body>
+</html>
