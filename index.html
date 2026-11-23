@@ -19,7 +19,7 @@
             rosepink: '#F472B6',
             softpink: '#FBCFE8',
             champagne: '#E6C280',
-            ivory: '#FAF3F0',
+            ivory: '#FFF5F7',
           },
           fontFamily: {
             serif: ['"Libre Caslon Text"', 'serif'],
@@ -32,14 +32,14 @@
   </script>
   <style>
     body {
-      background-color: #0B0709;
-      color: #FAF3F0;
+      background-color: #190A12;
+      color: #FFF5F7;
       background-image:
         linear-gradient(115deg, rgba(255, 255, 255, 0.035), transparent 28%, rgba(244, 114, 182, 0.055) 52%, transparent 72%),
-        radial-gradient(circle at 15% 15%, rgba(158, 27, 50, 0.30), transparent 40%),
-        radial-gradient(circle at 85% 35%, rgba(244, 114, 182, 0.18), transparent 45%),
-        radial-gradient(circle at 50% 85%, rgba(158, 27, 50, 0.24), transparent 50%),
-        linear-gradient(145deg, #12070c 0%, #0B0709 46%, #160912 100%);
+        radial-gradient(circle at 15% 15%, rgba(190, 24, 60, 0.38), transparent 40%),
+        radial-gradient(circle at 85% 35%, rgba(244, 114, 182, 0.28), transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(158, 27, 50, 0.35), transparent 50%),
+        linear-gradient(180deg, #240D18 0%, #160910 50%, #220C17 100%);
       background-attachment: fixed;
       overflow-x: hidden;
     }
@@ -57,9 +57,11 @@
     }
 
     .glass-fancy {
-      background: linear-gradient(145deg, rgba(26, 11, 18, 0.80), rgba(14, 8, 11, 0.92));
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(230, 194, 128, 0.24);
+      background: rgba(42, 16, 29, 0.72);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      color: #FFF5F7;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(251, 207, 232, 0.12);
     }
 
@@ -296,15 +298,15 @@
       z-index: 2;
       box-shadow:
         0 8px 24px rgba(158, 27, 50, 0.32),
-        0 0 18px rgba(244, 114, 182, 0.38),
+        0 0 18px rgba(244, 114, 182, 0.48),
         0 0 36px rgba(158, 27, 50, 0.20),
         inset 0 1px 0 rgba(255, 255, 255, 0.16);
       animation: bulletGlow 3.2s ease-in-out infinite;
     }
 
     @keyframes bulletGlow {
-      0%, 100% { box-shadow: 0 8px 24px rgba(158, 27, 50, 0.28), 0 0 14px rgba(244, 114, 182, 0.28), inset 0 1px 0 rgba(255,255,255,0.14); }
-      50% { box-shadow: 0 10px 30px rgba(158, 27, 50, 0.42), 0 0 26px rgba(244, 114, 182, 0.72), 0 0 44px rgba(230,194,128,0.18), inset 0 1px 0 rgba(255,255,255,0.20); }
+      0%, 100% { box-shadow: 0 8px 24px rgba(158, 27, 50, 0.28), 0 0 18px rgba(244, 114, 182, 0.42), inset 0 1px 0 rgba(255,255,255,0.14); }
+      50% { box-shadow: 0 10px 30px rgba(158, 27, 50, 0.42), 0 0 26px rgba(244, 114, 182, 0.68), 0 0 44px rgba(230,194,128,0.18), inset 0 1px 0 rgba(255,255,255,0.20); }
     }
 
     .story-item.is-visible .timeline-box {
@@ -552,14 +554,14 @@
     .ambient-heart {
       position: absolute;
       bottom: -30px;
-      color: rgba(244, 114, 182, 0.22);
+      color: rgba(244, 114, 182, 0.65);
       animation: ambientRise linear infinite;
     }
 
     @keyframes ambientRise {
       0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
-      12% { opacity: 1; }
-      88% { opacity: 0.7; }
+      12% { opacity: 0.65; }
+      88% { opacity: 0.45; }
       100% { transform: translate3d(var(--drift), -110vh, 0) rotate(18deg); opacity: 0; }
     }
 
@@ -867,11 +869,13 @@
       color: rgba(251, 207, 232, 0.74);
       cursor: pointer;
       font: 500 0.8rem "Plus Jakarta Sans", sans-serif;
+      box-shadow: 0 0 16px rgba(244, 114, 182, 0.22);
       transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .journey-nav:hover {
       color: #E6C280;
+      box-shadow: 0 0 20px rgba(244, 114, 182, 0.32);
     }
 
     .journey-nav[data-direction="previous"]:hover {
